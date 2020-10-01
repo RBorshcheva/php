@@ -78,6 +78,13 @@ document.getElementById('btn_div').addEventListener('click', function () {
     inputWindow.value = '';
 })
 
+//sqrе operation
+document.getElementById('btn_sqrt').addEventListener('click', function () {
+    lastOperand = parseInt(inputWindow.value);
+    operation ='sqrt';
+    inputWindow.value = '';
+})
+
 
 
 document.getElementById('btn_res').addEventListener('click', function () {
@@ -101,6 +108,12 @@ document.getElementById('btn_res').addEventListener('click', function () {
     }
     if (operation === 'div'){
         const result = lastOperand / parseInt(inputWindow.value);
+        operation = null;
+        lastOperand = 0;
+        inputWindow.value = result;
+    }
+    if (operation === 'sqrt'){
+        const result = Math.sqrt(lastOperand);
         operation = null;
         lastOperand = 0;
         inputWindow.value = result;
