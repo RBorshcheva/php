@@ -3,11 +3,13 @@
     font-family: 'Share Tech Mono', monospace;
     
 }
+
 .input-window {
     text-align: end;
     font-size: x-large;
+    background-color: rgb(201, 200, 200);
 }
-
-col.id {
-    color: indigo;
+.card-body{
+    background-color: rgb(156, 191, 238);
+    butt
 }
