@@ -1,0 +1,13 @@
+.card {
+	background-color: beige;
+}
+
+.card-header {
+	background-color: rgb(197, 127, 62);
+	color: white;
+	font-size: 28px;
+}
+
+.btn-group {
+	margin: 5px;
+}
