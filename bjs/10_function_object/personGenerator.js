@@ -165,6 +165,8 @@ const personGenerator = {
             this.person.surname = `${this.randomSurname()}a`;
             this.person.middleName = `${this.randomMiddleName()}вна`;       
         }
+        //generation of birth year
+        this.person.year = this.randomIntNumber(1950, 2000);
         return this.person;
     }
 };
