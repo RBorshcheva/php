@@ -5,9 +5,16 @@
 .card-header {
 	background-color: rgb(197, 127, 62);
 	color: white;
-	font-size: 28px;
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
 }
 
 .btn-group {
-	margin: 5px;
+	margin: 10px;
+}
+
+h4, h5{
+    font-size: 27px;
+    font-family: 'Times New Roman', Times, serif;
 }
