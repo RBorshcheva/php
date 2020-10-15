@@ -15,14 +15,15 @@ window.onload = function()
 
 //clearing the window
 document.getElementById('btnClear').addEventListener('click', function () {
-    document.getElementById('firstNameOutput').innerText = 'Все поля очищены, сгенерируйте новый запрос';
-    document.getElementById('surnameOutput').innerText ='';
-    document.getElementById('genderOutput').innerText = '';
-    document.getElementById('birthYearOutput').innerText = '';
-    document.getElementById('birthmouthOutput').innerText = '';
-    document.getElementById('birthdayOutput').innerText = '';
-    document.getElementById('PatronymicOutput').innerText = '';
-    document.getElementById('professionOutput').innerText = '';
+    document.getElementById('surnameOutput').innerText = "Все поля очищены, сгенерируйте новый запрос";
+    document.getElementById('firstNameOutput').innerText = "";
+    document.getElementById('middleName').innerText = "";
+    document.getElementById('genderOutput').innerText = "";
+    document.getElementById('birthYearOutput').innerText = "";
+    document.getElementById('dayOutput').innerText = "";
+    document.getElementById('monthOutput').innerText = "";
+    document.getElementById('profession').innerText = "";
+    document.getElementById('middleName').innerText = "";
 })
 
 

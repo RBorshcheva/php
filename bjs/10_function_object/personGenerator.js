@@ -20,6 +20,7 @@ const personGenerator = {
             "id_16": "Морозов"
         }
     }`,
+
     firstNameMaleJson: `{
         "count": 10,
         "list": {     
@@ -36,6 +37,57 @@ const personGenerator = {
         }
     }`,
 
+    //Feamale first names 
+    firstNameFemaleJson: `{
+        "count": 10,
+        "list": {     
+            "id_1": "Мария",
+            "id_2": "Ольга",
+            "id_3": "Елизавета",
+            "id_4": "Анастасия",
+            "id_5": "Евгения",
+            "id_6": "Галина",
+            "id_7": "Виктория",
+            "id_8": "Вероника",
+            "id_9": "Александра",
+            "id_10": "Елена"
+        }
+    }`,
+
+    //middle name construction
+    middleNameJson: `{
+        "count": 10,
+        "list": {     
+            "id_1": "Олего",
+            "id_2": "Алесандро",
+            "id_3": "Дмитрие",
+            "id_4": "Ивано",
+            "id_5": "Антоно",
+            "id_6": "Максимо",
+            "id_7": "Алесее",
+            "id_8": "Петро",
+            "id_9": "Андрее",
+            "id_10": "Руслано"
+        }
+    }`,
+
+
+    // professions
+    professionJson: `{
+        "count": 12,
+        "list": {     
+            "id_1": "Слесарь",
+            "id_2": "Солдат",
+            "id_3": "Шахтер",
+            "id_4": "Врач",
+            "id_5": "Водитель",
+            "id_6": "Строитель",
+            "id_7": "Официант",
+            "id_8": "Программист",
+            "id_10": "Учитель"
+        }
+    }`,
+
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
 
@@ -47,10 +99,25 @@ const personGenerator = {
         return obj.list[prop];
     },
 
+    //random gender, num 1 is Male, 2 is Female 
+    randomGender: function () {
+        const randomGender=this.randomIntNumber(2, 1);
+        if (randomGender==1) {
+            return this.GENDER_MALE;
+        }else {
+            return this.GENDER_FEMALE;
+        }
+    },
+
     randomFirstName: function() {
 
         return this.randomValue(this.firstNameMaleJson);
 
+    },
+
+    //func for generation female names
+    randomFirstNameShe: function() {
+        return this.randomValue(this,this.firstNameFemaleJson);
     },
 
 
@@ -60,11 +127,30 @@ const personGenerator = {
 
     },
 
+    //random middle name 
+    randomMiddleName: function() {
+        return this.randomValue(this.middleNameJson);
+    },
+
+    //random profession
+    randomProfession: function () {
+        return this.randomValue(this.professionJson);
+    },
+
 
     getPerson: function () {
         this.person = {};
         // this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
+        this.person.profession = this.randomProfession();
+        //we check the condion of professions
+        if ((this.person.profession == "Слесарь") || (this.person.profession == "Солдат") || (this.person.profession == "Шахтер")) 
+        {
+            this.person.gender = this.GENDER_MALE;
+        }
+        else {
+            this.person.gender = this.randomGender();
+        };
         return this.person;
     }
 };
