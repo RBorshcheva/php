@@ -1,5 +1,3 @@
-const generation = document.getElementById('btnGen');
-const reset = document.getElementById('btnClear');
 
 //generation of the request
 window.onload = function()
