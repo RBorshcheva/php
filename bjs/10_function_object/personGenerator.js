@@ -80,7 +80,7 @@ const personGenerator = {
             "id_2": "Солдат",
             "id_3": "Шахтер",
             "id_4": "Врач",
-            "id_5": "Водитель",
+            "id_5": "Курьер",
             "id_6": "Строитель",
             "id_7": "Официант",
             "id_8": "Программист",
@@ -101,7 +101,9 @@ const personGenerator = {
 
     //random gender, num 1 is Male, 2 is Female 
     randomGender: function () {
-        const randomGender=this.randomIntNumber(2, 1);
+        const randnum = Math.floor(Math.round(Math.random()* 2));
+        console.log(randnum, '!!!!!!!!!!!!')
+        const randomGender=this.randnum;
         if (randomGender==1) {
             return this.GENDER_MALE;
         }else {
@@ -116,8 +118,8 @@ const personGenerator = {
     },
 
     //func for generation female names
-    randomFirstNameShe: function() {
-        return this.randomValue(this,this.firstNameFemaleJson);
+    randomFirstNameFem: function() {
+        return this.randomValue(this.firstNameFemaleJson);
     },
 
 
@@ -141,7 +143,7 @@ const personGenerator = {
     getPerson: function () {
         this.person = {};
         // this.person.gender = this.randomGender();
-        this.person.firstName = this.randomFirstName();
+        //this.person.firstName = this.randomFirstName();
         this.person.profession = this.randomProfession();
         //we check the condion of professions
         if ((this.person.profession == "Слесарь") || (this.person.profession == "Солдат") || (this.person.profession == "Шахтер")) 
@@ -151,6 +153,18 @@ const personGenerator = {
         else {
             this.person.gender = this.randomGender();
         };
+
+        //the constructor of Full Name with condition of gender, in middle name there are some addings due to the gender 
+        if (this.person.gender == this.GENDER_MALE) {
+            this.person.firstName = this.randomFirstName();
+            this.person.surname = this.randomSurname();
+            this.person.middleName = `${this.randomMiddleName()}вич`;
+        }
+        else {
+            this.person.firstName = this.randomFirstNameFem();
+            this.person.surname = `${this.randomSurname()}a`;
+            this.person.middleName = `${this.randomMiddleName()}вна`;       
+        }
         return this.person;
     }
 };
