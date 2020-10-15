@@ -102,7 +102,7 @@ const personGenerator = {
     //random gender, num 1 is Male, 2 is Female 
     randomGender: function () {
         const randnum = Math.floor(Math.round(Math.random()* 2));
-        console.log(randnum, '!!!!!!!!!!!!')
+        //console.log(randnum, '!!!!!!!!!!!!')
         const randomGender=this.randnum;
         if (randomGender==1) {
             return this.GENDER_MALE;
@@ -154,7 +154,7 @@ const personGenerator = {
             this.person.gender = this.randomGender();
         };
 
-        //the constructor of Full Name with condition of gender, in middle name there are some addings due to the gender 
+        //the constructor of Full Name with condition of gender, in the sur and middle names there are some addings due to the gender 
         if (this.person.gender == this.GENDER_MALE) {
             this.person.firstName = this.randomFirstName();
             this.person.surname = this.randomSurname();
